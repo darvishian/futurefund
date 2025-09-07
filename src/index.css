@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 220 90% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 220 100% 70%;
+
+    --secondary: 240 21% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 4% 96%;
+    --muted-foreground: 240 3.8% 46%;
+
+    --accent: 30 100% 60%;
+    --accent-foreground: 240 21% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 220 90% 56%;
+
+    /* Cosmic theme colors */
+    --cosmic-dark: 240 21% 15%;
+    --cosmic-blue: 220 90% 56%;
+    --cosmic-gold: 30 100% 60%;
+    --cosmic-purple: 270 50% 40%;
+    
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(var(--cosmic-dark)), hsl(var(--cosmic-blue)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-gold: linear-gradient(45deg, hsl(var(--cosmic-gold)), hsl(var(--accent)));
+    
+    /* Shadows and effects */
+    --shadow-cosmic: 0 25px 50px -12px hsl(var(--cosmic-blue) / 0.25);
+    --glow-cosmic: 0 0 40px hsl(var(--primary-glow) / 0.6);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 21% 15%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 15% 18%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 15% 18%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 220 90% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 220 100% 70%;
+
+    --secondary: 240 15% 25%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 15% 25%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 30 100% 60%;
+    --accent-foreground: 240 21% 15%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 15% 25%;
+    --input: 240 15% 25%;
+    --ring: 220 90% 56%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .hero-text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary-glow) / 0.5);
+  }
+  
+  .cosmic-glow {
+    box-shadow: var(--glow-cosmic);
+  }
+  
+  .gradient-cosmic {
+    background: var(--gradient-cosmic);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+}
