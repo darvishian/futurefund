@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import abstractFinancialFreedom from "@/assets/cosmic coast.png";
+import abstractFinancialFreedom from "@/assets/abstract-financial-freedom.png";
 import { useState } from "react";
 
 const Hero = () => {
