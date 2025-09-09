@@ -6,11 +6,33 @@ import { Mail, Download, Linkedin, Twitter } from "lucide-react";
 const Footer = () => {
   const [email, setEmail] = useState("");
   
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle email submission
-    console.log("Email submitted:", email);
-    setEmail("");
+
+    try {
+      // Submit to Google Sheets (you'll need to set up a Google Apps Script)
+      const response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          timestamp: new Date().toISOString(),
+          source: 'footer_newsletter'
+        }),
+      });
+
+      if (response.ok) {
+        alert('Thank you for subscribing! We\'ll keep you updated.');
+        setEmail("");
+      } else {
+        throw new Error('Failed to submit');
+      }
+    } catch (error) {
+      console.error('Error submitting email:', error);
+      alert('There was an error subscribing. Please try again.');
+    }
   };
 
   return (

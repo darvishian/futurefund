@@ -5,25 +5,35 @@ import manriver from "@/assets/manriver.jpeg";
 import { useState } from "react";
 
 const Hero = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: ''
-  });
+  const [email, setEmail] = useState('');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
-    console.log('Form submitted:', formData);
-    alert('Thank you for joining the waitlist! We\'ll be in touch soon.');
+
+    try {
+      // Submit to Google Sheets (you'll need to set up a Google Apps Script)
+      const response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          timestamp: new Date().toISOString(),
+          source: 'hero_waitlist'
+        }),
+      });
+
+      if (response.ok) {
+        alert('Thank you for joining the waitlist! We\'ll be in touch soon.');
+        setEmail('');
+      } else {
+        throw new Error('Failed to submit');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting your email. Please try again.');
+    }
   };
 
   return (
@@ -69,31 +79,10 @@ const Hero = () => {
           {/* Waitlist Form */}
           <form onSubmit={handleSubmit} className="max-w-sm mx-auto space-y-3">
             <Input
-              name="name"
-              type="text"
-              value={formData.name}
-              onChange={handleInputChange}
-              placeholder="Full name"
-              required
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-primary focus:ring-primary h-10"
-            />
-
-            <Input
-              name="email"
               type="email"
-              value={formData.email}
-              onChange={handleInputChange}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Email address"
-              required
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-primary focus:ring-primary h-10"
-            />
-
-            <Input
-              name="phone"
-              type="tel"
-              value={formData.phone}
-              onChange={handleInputChange}
-              placeholder="Phone number"
               required
               className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-primary focus:ring-primary h-10"
             />
@@ -101,7 +90,7 @@ const Hero = () => {
             <Button
               type="submit"
               size="sm"
-              disabled={!formData.name || !formData.email || !formData.phone}
+              disabled={!email}
               className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-500 disabled:cursor-not-allowed text-white px-6 py-2 text-sm cosmic-glow transition-all duration-300 hover:scale-105"
             >
               Join Waitlist
