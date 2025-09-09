@@ -25,7 +25,7 @@ const ProjectionsSection = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden gradient-bg-subtle">
+    <section className="py-20 relative overflow-hidden">
       {/* Background Image */}
       
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

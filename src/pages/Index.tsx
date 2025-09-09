@@ -9,11 +9,15 @@ const Index = () => {
   return (
     <main className="font-inter">
       <Hero />
-      <AboutSection />
-      <StrategySection />
-      <TeamSection />
-      <ProjectionsSection />
-      <Footer />
+
+      {/* Continuous gradient background from About to Footer */}
+      <div className="gradient-bg-continuous">
+        <AboutSection />
+        <StrategySection />
+        <TeamSection />
+        <ProjectionsSection />
+        <Footer />
+      </div>
     </main>
   );
 };

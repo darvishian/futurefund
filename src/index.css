@@ -171,6 +171,22 @@ All colors MUST be HSL.
     }
   }
 
+  /* Continuous gradient background from About to Footer */
+  .gradient-bg-continuous {
+    background: linear-gradient(
+      180deg,
+      #000000 0%,           /* Black at the top */
+      hsl(var(--cosmic-dark)) 10%,
+      hsl(var(--cosmic-blue)) 30%,
+      hsl(var(--cosmic-purple)) 50%,
+      hsl(var(--cosmic-gold)) 70%,
+      hsl(var(--cosmic-dark)) 90%,
+      #000000 100%          /* Black at the bottom */
+    );
+    background-size: 400% 400%;
+    animation: gradient-bg-continuous-flow 25s ease-in-out infinite;
+  }
+
   /* Full-page gradient background with subtle animation */
   .gradient-bg-full {
     background: linear-gradient(
@@ -209,6 +225,24 @@ All colors MUST be HSL.
       background-position: 100% 100%;
     }
     75% {
+      background-position: 0% 100%;
+    }
+  }
+
+  @keyframes gradient-bg-continuous-flow {
+    0%, 100% {
+      background-position: 0% 0%;
+    }
+    20% {
+      background-position: 50% 25%;
+    }
+    40% {
+      background-position: 100% 50%;
+    }
+    60% {
+      background-position: 50% 75%;
+    }
+    80% {
       background-position: 0% 100%;
     }
   }
