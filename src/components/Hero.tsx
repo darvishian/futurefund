@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import abstractFinancialFreedom from "@/assets/abstract-financial-freedom.png";
+import manriver from "@/assets/manriver.jpeg";
 import { useState } from "react";
 
 const Hero = () => {
@@ -27,14 +27,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${abstractFinancialFreedom})` }}
-      >
-        <div className="absolute inset-0 bg-black/20"></div>
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       
       {/* Top Navigation Elements */}
       <div className="absolute top-8 left-8 z-20 bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-4 py-2">
@@ -49,6 +42,15 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Content */}
         <div className="animate-fade-in">
+          {/* Hero Image */}
+          <div className="mb-8 flex justify-center">
+            <img
+              src={manriver}
+              alt="Man by river"
+              className="w-48 h-32 md:w-64 md:h-40 object-cover rounded-lg shadow-2xl opacity-90"
+            />
+          </div>
+
           <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 hero-text-glow animate-glow-pulse">
             Future Fund One
           </h1>
