@@ -122,6 +122,70 @@ Check the Apps Script execution log:
 ### Permission Issues
 Make sure the Google Sheet is shared appropriately or that you're the owner.
 
+## Alternative: Google Forms Integration (Easier Setup)
+
+If the Apps Script approach is too complex, you can use Google Forms:
+
+### 1. Create a Google Form
+
+1. Go to [Google Forms](https://forms.google.com)
+2. Create a new form
+3. Add these questions:
+   - **Email** (Short answer, required)
+   - **Timestamp** (Date, can be hidden)
+   - **Source** (Short answer, can be hidden)
+4. Get the form's action URL by:
+   - Clicking "Send" → "Link" → Copy the pre-filled link
+   - The URL will look like: `https://docs.google.com/forms/u/0/d/e/YOUR_FORM_ID/formResponse`
+
+### 2. Update the Code
+
+Replace the fetch call with form submission:
+
+```javascript
+// Instead of Apps Script, use Google Forms
+const formData = new FormData();
+formData.append('entry.123456789', email); // Replace with your form field ID
+formData.append('entry.987654321', new Date().toISOString()); // Timestamp field
+formData.append('entry.555666777', 'hero_waitlist'); // Source field
+
+const response = await fetch('https://docs.google.com/forms/u/0/d/e/YOUR_FORM_ID/formResponse', {
+  method: 'POST',
+  body: formData,
+  mode: 'no-cors'
+});
+```
+
+### 3. Find Field IDs
+
+1. In your Google Form, click the 3 dots → "Get pre-filled link"
+2. Fill in test data and copy the URL
+3. The field IDs will be in the URL parameters (e.g., `entry.123456789`)
+
+## Testing the Integration
+
+1. Open browser developer tools (F12)
+2. Go to Console tab
+3. Submit an email from your form
+4. Check the console logs for any errors
+5. If using localStorage fallback, check Application → Local Storage
+
+## Troubleshooting Common Issues
+
+### CORS Errors
+- **Solution**: Use `mode: 'no-cors'` in fetch options
+- **Limitation**: Can't read response content, assume success
+
+### Apps Script Not Working
+- **Check**: Is the script deployed as a web app?
+- **Check**: Is "Who has access" set to "Anyone"?
+- **Check**: Is the script URL correct?
+
+### Form Not Submitting
+- **Check**: Are you on HTTPS? (Required for Google services)
+- **Check**: Browser console for network errors
+- **Check**: Form field IDs are correct
+
 ## Security Notes
 
 - This is a basic implementation for demonstration
@@ -131,3 +195,4 @@ Make sure the Google Sheet is shared appropriately or that you're the owner.
   - CAPTCHA verification
   - Data sanitization
   - HTTPS enforcement
+  - Server-side validation
