@@ -17,9 +17,9 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 220 90% 56%;
+    --primary: 205 85% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 220 100% 70%;
+    --primary-glow: 205 100% 70%;
 
     --secondary: 240 21% 15%;
     --secondary-foreground: 0 0% 100%;
@@ -27,7 +27,7 @@ All colors MUST be HSL.
     --muted: 240 4% 96%;
     --muted-foreground: 240 3.8% 46%;
 
-    --accent: 30 100% 60%;
+    --accent: 215 15% 65%;
     --accent-foreground: 240 21% 15%;
 
     --destructive: 0 84.2% 60.2%;
@@ -39,9 +39,9 @@ All colors MUST be HSL.
 
     /* Cosmic theme colors */
     --cosmic-dark: 240 21% 15%;
-    --cosmic-blue: 220 90% 56%;
-    --cosmic-gold: 30 100% 60%;
-    --cosmic-purple: 270 50% 40%;
+    --cosmic-blue: 205 85% 55%;
+    --cosmic-gold: 215 15% 65%;
+    --cosmic-purple: 240 25% 45%;
     
     /* Gradients */
     --gradient-cosmic: linear-gradient(135deg, hsl(var(--cosmic-dark)), hsl(var(--cosmic-blue)));
@@ -81,9 +81,9 @@ All colors MUST be HSL.
     --popover: 240 15% 18%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 220 90% 56%;
+    --primary: 205 85% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 220 100% 70%;
+    --primary-glow: 205 100% 70%;
 
     --secondary: 240 15% 25%;
     --secondary-foreground: 0 0% 100%;
@@ -91,7 +91,7 @@ All colors MUST be HSL.
     --muted: 240 15% 25%;
     --muted-foreground: 240 5% 65%;
 
-    --accent: 30 100% 60%;
+    --accent: 215 15% 65%;
     --accent-foreground: 240 21% 15%;
 
     --destructive: 0 62.8% 30.6%;
