@@ -93,7 +93,7 @@ const ProjectionsSection = () => {
                   <DollarSign className="w-6 h-6 text-accent mr-2" />
                   <h4 className="font-semibold text-white">Total LP Return</h4>
                 </div>
-                <div className="text-3xl font-bold text-accent">${scaledReturn}</div>
+                <div className="text-3xl font-bold gradient-text">${scaledReturn}</div>
                 <p className="text-sm text-white/70 mt-1">Net-of-fee projected return over investment period</p>
               </div>
               
@@ -105,7 +105,7 @@ const ProjectionsSection = () => {
                     <div className="text-white/70">Target MOIC</div>
                   </div>
                   <div>
-                    <div className="text-accent font-bold">31.4%</div>
+                    <div className="gradient-text font-bold">31.4%</div>
                     <div className="text-white/70">IRR (Base Case)</div>
                   </div>
                 </div>
@@ -132,7 +132,7 @@ const ProjectionsSection = () => {
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-white/70">Treasury Value:</span>
-                <span className="font-bold text-accent">$2.2B</span>
+                <span className="font-bold gradient-text">$2.2B</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-white/70">Target BTC Price:</span>
@@ -150,7 +150,7 @@ const ProjectionsSection = () => {
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-white/70">Investment Period:</span>
-                <span className="font-bold text-accent">10+ Years</span>
+                <span className="font-bold gradient-text">10+ Years</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-white/70">Swig Locations:</span>

@@ -58,13 +58,13 @@ const BitcoinSection = () => {
               
               <div className="space-y-4">
                 <p className="text-white/70 leading-relaxed">
-                  Bitcoin is poised to eclipse gold's <span className="text-accent font-semibold">$23T market cap</span>, 
+                  Bitcoin is poised to eclipse gold's <span className="gradient-text font-semibold">$23T market cap</span>, 
                   implying a price above <span className="text-primary font-semibold">$1M/BTC</span> 
                   (24%+ 10-year CAGR from ~$112K).
                 </p>
                 
                 <div className="bg-accent/10 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-accent mb-1">$1M/BTC</div>
+                  <div className="text-2xl font-bold gradient-text mb-1">$1M/BTC</div>
                   <div className="text-sm text-white/60">Target price when matching gold's market cap</div>
                 </div>
               </div>

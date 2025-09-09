@@ -37,7 +37,7 @@ const TaxSection = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-white/70">Annual Cash Flow:</span>
-                    <span className="font-semibold text-accent">$315K/year</span>
+                    <span className="font-semibold gradient-text">$315K/year</span>
                   </div>
                 </div>
               </div>

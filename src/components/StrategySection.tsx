@@ -44,7 +44,7 @@ const StrategySection = () => {
               <h3 className="text-xl font-bold text-white">NNN Real Estate</h3>
             </div>
             <p className="text-white/70 leading-relaxed">
-              Focus on single-tenant assets with high immediate yield and <span className="text-accent font-semibold">100% bonus depreciation</span> under 
+              Focus on single-tenant assets with high immediate yield and <span className="gradient-text font-semibold">100% bonus depreciation</span> under
               the Big Beautiful Bill, generating phantom losses to offset gains. Cash flows fuel Bitcoin treasury.
             </p>
           </div>
@@ -99,19 +99,19 @@ const StrategySection = () => {
         {/* Key Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">10.04x</div>
+            <div className="text-3xl font-bold gradient-text mb-2">10.04x</div>
             <div className="text-sm text-white/60">Target MOIC</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-accent mb-2">31.4%</div>
+            <div className="text-3xl font-bold gradient-text mb-2">31.4%</div>
             <div className="text-sm text-white/60">IRR (Base Case)</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">2,168</div>
+            <div className="text-3xl font-bold gradient-text mb-2">2,168</div>
             <div className="text-sm text-white/60">BTC Owned by 2035</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-accent mb-2">$2.2B</div>
+            <div className="text-3xl font-bold gradient-text mb-2">$2.2B</div>
             <div className="text-sm text-white/60">BTC Treasury Value</div>
           </div>
         </div>

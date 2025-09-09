@@ -61,9 +61,9 @@ const Hero = () => {
           </h2>
           
           <p className="text-lg text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Built on three pillars: <span className="text-accent font-medium">Bitcoin Investment</span> enhanced by proprietary algorithms, 
-            <span className="text-primary font-medium"> Real Estate Cash Flow</span> fueling accumulation, and 
-            <span className="text-accent font-medium"> Tax Efficiency</span> via depreciation benefits.
+            Built on three pillars: <span className="gradient-text font-medium">Bitcoin Investment</span> enhanced by proprietary algorithms,
+            <span className="gradient-text font-medium"> Real Estate Cash Flow</span> fueling accumulation, and
+            <span className="gradient-text font-medium"> Tax Efficiency</span> via depreciation benefits.
           </p>
           
           {/* Waitlist Form */}

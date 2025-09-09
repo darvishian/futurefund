@@ -45,7 +45,7 @@ const AboutSection = () => {
               
               <div className="mt-8 pt-6 border-t border-gray-700">
                 <p className="text-lg font-medium text-white">
-                  Price Target: <span className="text-accent text-2xl font-bold">~$1M/BTC</span>
+                  Price Target: <span className="gradient-text text-2xl font-bold">~$1M/BTC</span>
                 </p>
                 <p className="text-sm text-white/60 mt-1">
                   From today's ~$112K (24%+ 10-year CAGR potential)
