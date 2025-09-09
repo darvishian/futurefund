@@ -53,26 +53,8 @@ const Footer = () => {
   return (
     <footer className="gradient-cosmic text-white py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* CTA Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Learn More?
-          </h2>
-          <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-            Join our investor list to receive updates and exclusive access to Future Fund One opportunities.
-          </p>
-          
-          <Button 
-            size="lg" 
-            className="bg-accent hover:bg-accent/90 text-cosmic-dark px-8 py-4 text-lg font-semibold"
-            onClick={() => window.open('https://www.archbami.com', '_blank')}
-          >
-            Visit www.archbami.com
-          </Button>
-        </div>
-        
         {/* Contact & Links */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Email Signup */}
           <div>
             <h3 className="text-xl font-bold mb-4">Join Our Investor List</h3>
@@ -109,28 +91,6 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Social */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Connect</h3>
-            <div className="flex space-x-4">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-white hover:text-accent hover:bg-white/10"
-                onClick={() => window.open('#', '_blank')}
-              >
-                <Linkedin className="w-5 h-5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-white hover:text-accent hover:bg-white/10"
-                onClick={() => window.open('#', '_blank')}
-              >
-                <Twitter className="w-5 h-5" />
-              </Button>
-            </div>
-          </div>
         </div>
         
         {/* Disclaimer */}
