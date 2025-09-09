@@ -197,20 +197,6 @@ const StrategySection = () => {
                     <TableCell className="text-white">$678.78M</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="text-white font-medium">Twenty One Capital</TableCell>
-                    <TableCell className="text-white">CEP/XXI</TableCell>
-                    <TableCell className="text-white">43,514</TableCell>
-                    <TableCell className="text-white">~$3.6B</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="text-white font-medium">Bitcoin Standard Treasury</TableCell>
-                    <TableCell className="text-white">CEPO/BSTR</TableCell>
-                    <TableCell className="text-white">30,021</TableCell>
-                    <TableCell className="text-white">~$1.5B+</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
-                  </TableRow>
-                  <TableRow>
                     <TableCell className="text-white font-medium">Bullish</TableCell>
                     <TableCell className="text-white">BLSH</TableCell>
                     <TableCell className="text-white">24,000</TableCell>
@@ -237,13 +223,6 @@ const StrategySection = () => {
                     <TableCell className="text-white">18,430</TableCell>
                     <TableCell className="text-white">$4.64B</TableCell>
                     <TableCell className="text-white">-$108.61M</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="text-white font-medium">Galaxy Digital Holdings</TableCell>
-                    <TableCell className="text-white">GLXY</TableCell>
-                    <TableCell className="text-white">17,102</TableCell>
-                    <TableCell className="text-white">$4.5B</TableCell>
-                    <TableCell className="text-white">$296M</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="text-white font-medium">CleanSpark</TableCell>
