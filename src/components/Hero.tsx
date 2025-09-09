@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import manriver from "@/assets/manriver.jpeg";
-import futureFundLogo from "@/assets/Future Fund One Logo.png";
+import archPublicLogo from "@/assets/ArchPublic_Logo_Stacked_1 Color - White.png";
 import { useState } from "react";
 
 const Hero = () => {
@@ -62,8 +62,8 @@ const Hero = () => {
       
       <div className="absolute top-8 right-8 z-20">
         <img
-          src={futureFundLogo}
-          alt="Future Fund One Logo"
+          src={archPublicLogo}
+          alt="Arch Public Logo"
           className="h-12 w-auto object-contain"
         />
       </div>
