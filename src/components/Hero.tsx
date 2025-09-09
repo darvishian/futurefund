@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import manriver from "@/assets/manriver.jpeg";
+import futureFundLogo from "@/assets/Future Fund One Logo.png";
 import { useState } from "react";
 
 const Hero = () => {
@@ -59,8 +60,12 @@ const Hero = () => {
         <span className="text-accent font-medium text-sm">For Accredited Investors Only</span>
       </div>
       
-      <div className="absolute top-8 right-8 z-20 text-white font-semibold text-lg">
-        Arch Public | BAMI
+      <div className="absolute top-8 right-8 z-20">
+        <img
+          src={futureFundLogo}
+          alt="Future Fund One Logo"
+          className="h-12 w-auto object-contain"
+        />
       </div>
       
       {/* Content */}
