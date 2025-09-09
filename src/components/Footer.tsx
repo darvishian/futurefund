@@ -51,7 +51,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="gradient-cosmic text-white py-20">
+    <footer className="gradient-bg-full text-white py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Contact & Links */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">

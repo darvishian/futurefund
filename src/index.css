@@ -170,4 +170,58 @@ All colors MUST be HSL.
       background-position: 100% 50%;
     }
   }
+
+  /* Full-page gradient background with subtle animation */
+  .gradient-bg-full {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--cosmic-dark)) 0%,
+      hsl(var(--cosmic-blue)) 25%,
+      hsl(var(--cosmic-purple)) 50%,
+      hsl(var(--cosmic-gold)) 75%,
+      hsl(var(--cosmic-dark)) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradient-bg-flow 20s ease-in-out infinite;
+  }
+
+  .gradient-bg-subtle {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--cosmic-dark) / 0.95) 0%,
+      hsl(var(--cosmic-blue) / 0.85) 25%,
+      hsl(var(--cosmic-purple) / 0.75) 50%,
+      hsl(var(--cosmic-gold) / 0.65) 75%,
+      hsl(var(--cosmic-dark) / 0.95) 100%
+    );
+    background-size: 300% 300%;
+    animation: gradient-bg-subtle 25s ease-in-out infinite reverse;
+  }
+
+  @keyframes gradient-bg-flow {
+    0%, 100% {
+      background-position: 0% 0%;
+    }
+    25% {
+      background-position: 100% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    75% {
+      background-position: 0% 100%;
+    }
+  }
+
+  @keyframes gradient-bg-subtle {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    33% {
+      background-position: 50% 0%;
+    }
+    66% {
+      background-position: 100% 50%;
+    }
+  }
 }

@@ -25,12 +25,8 @@ const ProjectionsSection = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden bg-black">
+    <section className="py-20 relative overflow-hidden gradient-bg-subtle">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-3"
-        style={{ backgroundImage: `url(${cosmicBurst})` }}
-      ></div>
       
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

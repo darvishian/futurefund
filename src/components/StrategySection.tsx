@@ -4,12 +4,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 
 const StrategySection = () => {
   return (
-    <section className="py-20 relative overflow-hidden bg-black">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-5"
-        style={{ backgroundImage: `url(${cosmicBurst})` }}
-      ></div>
+    <section className="py-20 relative overflow-hidden gradient-bg-full">
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
