@@ -75,7 +75,7 @@ const Hero = () => {
               required
               className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-primary focus:ring-primary h-10"
             />
-            
+
             <Input
               name="email"
               type="email"
@@ -85,7 +85,7 @@ const Hero = () => {
               required
               className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-primary focus:ring-primary h-10"
             />
-            
+
             <Input
               name="phone"
               type="tel"
@@ -95,16 +95,35 @@ const Hero = () => {
               required
               className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-primary focus:ring-primary h-10"
             />
-            
-            <Button 
+
+            <Button
               type="submit"
-              size="sm" 
+              size="sm"
               disabled={!formData.name || !formData.email || !formData.phone}
               className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-500 disabled:cursor-not-allowed text-white px-6 py-2 text-sm cosmic-glow transition-all duration-300 hover:scale-105"
             >
               Join Waitlist
             </Button>
           </form>
+
+          {/* Schedule Call Button */}
+          <div className="max-w-sm mx-auto mt-4">
+            <Button
+              asChild
+              size="sm"
+              variant="outline"
+              className="w-full bg-white/10 border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+            >
+              <a
+                href="https://calendar.app.google/7j3AVzoz5WGptCVE7?_kx=4Yo6TKgOFJ35T6kHnb87Sw.RjX6qj"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full"
+              >
+                Schedule a Call
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
       
