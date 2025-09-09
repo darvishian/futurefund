@@ -53,9 +53,7 @@ const StrategySection = () => {
               <h3 className="text-xl font-bold text-white">Strategic Partnership with Swig Soda</h3>
             </div>
             <p className="text-white/70 leading-relaxed">
-              Partner to build up to <span className="text-primary font-semibold">170 drive-thru locations</span> over 3 years. 
-              Act as landlord: Acquire land, perform improvements, secure long-term leases. Receive market-rate rent plus 
-              up to <span className="text-accent font-semibold">37.5% of monthly net profits</span> per store into Bitcoin treasury.
+              Act as landlord: Acquire land, perform improvements, secure long-term leases. Receive market-rate rent plus up to <span className="gradient-text font-semibold">50% of monthly net profits</span> per store into Bitcoin treasury. Partner to build up to <span className="gradient-text font-semibold">170 drive-thru locations</span> over 3 years with no operational risk.
             </p>
           </div>
         </div>

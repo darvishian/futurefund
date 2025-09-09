@@ -83,10 +83,10 @@ const Footer = () => {
               <Button
                 variant="ghost"
                 className="w-full justify-start text-white hover:text-accent hover:bg-white/10"
-                onClick={() => window.open('#', '_blank')}
+                onClick={() => window.open('https://docsend.com/view/s/5n5jy75mfnpqawrx', '_blank')}
               >
                 <Download className="w-4 h-4 mr-2" />
-                Download Deck
+                Access Data Room
               </Button>
             </div>
           </div>
