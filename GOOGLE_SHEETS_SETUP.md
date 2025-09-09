@@ -59,6 +59,23 @@ function setupHeaders() {
     sheet.getRange(1, 1, 1, 4).setValues([['Timestamp', 'Email', 'Source', 'Status']]);
   }
 }
+
+// Add doGet function for testing
+function doGet(e) {
+  try {
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        success: true,
+        message: 'Google Apps Script is working!',
+        timestamp: new Date().toISOString()
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: false, error: error.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
 ```
 
 ### 2. Deploy the Script
@@ -98,6 +115,65 @@ const response = await fetch('https://script.google.com/macros/s/YOUR_ACTUAL_SCR
 2. Submit a test email from the waitlist form
 3. Check your Google Sheet - the email should appear
 
+## 🚨 Troubleshooting doGet Function Issues
+
+### If you're getting a "failed status" for doGet:
+
+### **1. Test the Script Directly**
+1. In Apps Script editor, click **Run** → **Run function** → **doGet**
+2. Check the execution log for errors
+3. If you see "Script function not found", the script hasn't been saved
+
+### **2. Common doGet Issues:**
+
+**Missing Function:**
+```javascript
+// Add this to your script if missing:
+function doGet(e) {
+  return ContentService
+    .createTextOutput('Hello World!')
+    .setMimeType(ContentService.MimeType.TEXT);
+}
+```
+
+**Syntax Errors:**
+- Check for missing semicolons
+- Ensure proper JSON syntax
+- Verify variable declarations
+
+**Deployment Issues:**
+- Make sure you **Save** the script before deploying
+- Redeploy after making changes
+- Check that the new deployment URL is being used
+
+### **3. Test the doGet Function:**
+
+1. Save your script
+2. Deploy as new deployment
+3. Copy the new URL
+4. Open it directly in browser: `https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec`
+5. Should return: `{"success":true,"message":"Google Apps Script is working!","timestamp":"..."}`
+
+### **4. If doGet Still Fails:**
+
+**Check Script Execution:**
+```javascript
+// Add this temporary function to debug:
+function testScript() {
+  Logger.log('Script is running');
+  return 'OK';
+}
+```
+
+**Redeploy Completely:**
+1. Delete the current deployment
+2. Create a new deployment
+3. Update your website with the new URL
+
+**Check Permissions:**
+- Ensure the script has access to the spreadsheet
+- Verify the spreadsheet isn't restricted
+
 ## Data Structure
 
 The Google Sheet will receive:
@@ -121,6 +197,58 @@ Check the Apps Script execution log:
 
 ### Permission Issues
 Make sure the Google Sheet is shared appropriately or that you're the owner.
+
+## ✅ QUICK ALTERNATIVE: Google Forms (Much Easier!)
+
+If Apps Script is giving you trouble, use **Google Forms** instead - it's much simpler:
+
+### **1. Create Google Form (2 minutes)**
+
+1. Go to [Google Forms](https://forms.google.com)
+2. Click **Blank form**
+3. Add questions:
+   - **Email** (Short answer, Required)
+   - **Source** (Short answer, can hide this field)
+4. Click **Send** → **Link** → Copy the form URL
+
+### **2. Update Your Code (Simple)**
+
+Replace the fetch in Hero.tsx and Footer.tsx:
+
+```javascript
+// Replace this complex Apps Script call:
+const response = await fetch('https://script.google.com/macros/s/...', {
+
+// With this simple Google Forms call:
+const formData = new FormData();
+formData.append('entry.YOUR_FIELD_ID', email);
+formData.append('entry.SOURCE_FIELD_ID', 'hero_waitlist');
+
+const response = await fetch('https://docs.google.com/forms/u/0/d/e/YOUR_FORM_ID/formResponse', {
+  method: 'POST',
+  body: formData,
+  mode: 'no-cors'
+});
+```
+
+### **3. Find Field IDs**
+
+1. Open your form
+2. Right-click → **Inspect element**
+3. Look for `entry.` followed by numbers
+4. Those are your field IDs
+
+### **4. Get Form ID**
+
+Your form URL will be: `https://docs.google.com/forms/d/YOUR_FORM_ID/edit`
+Copy the ID from the URL.
+
+**Advantages:**
+- ✅ No coding required
+- ✅ No deployment headaches
+- ✅ Works immediately
+- ✅ Data goes directly to Google Sheets
+- ✅ No CORS issues
 
 ## Alternative: Google Forms Integration (Easier Setup)
 
