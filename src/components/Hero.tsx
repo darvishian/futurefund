@@ -47,7 +47,7 @@ const Hero = () => {
             <img
               src={manriver}
               alt="Man by river"
-              className="w-48 h-32 md:w-64 md:h-40 object-cover rounded-lg shadow-2xl opacity-90"
+              className="w-40 h-28 md:w-56 md:h-36 object-contain rounded-lg shadow-2xl opacity-90"
             />
           </div>
 
