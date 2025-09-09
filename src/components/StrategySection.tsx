@@ -178,10 +178,7 @@ const StrategySection = () => {
                     <TableHead className="text-white">Ticker</TableHead>
                     <TableHead className="text-white">BTC Holdings</TableHead>
                     <TableHead className="text-white">Market Cap</TableHead>
-                    <TableHead className="text-white">Revenue TTM</TableHead>
                     <TableHead className="text-white">Net Income TTM</TableHead>
-                    <TableHead className="text-white">Debt/Equity</TableHead>
-                    <TableHead className="text-white">PE Ratio</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -190,29 +187,20 @@ const StrategySection = () => {
                     <TableCell className="text-white">MSTR</TableCell>
                     <TableCell className="text-white">638,460</TableCell>
                     <TableCell className="text-white">~$90B</TableCell>
-                    <TableCell className="text-white">$462.32M</TableCell>
                     <TableCell className="text-white">$4.73B</TableCell>
-                    <TableCell className="text-white">0.16</TableCell>
-                    <TableCell className="text-white">17.53</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="text-white font-medium">MARA Holdings</TableCell>
                     <TableCell className="text-white">MARA</TableCell>
                     <TableCell className="text-white">52,477</TableCell>
                     <TableCell className="text-white">~$5.6B</TableCell>
-                    <TableCell className="text-white">$798.41M</TableCell>
                     <TableCell className="text-white">$678.78M</TableCell>
-                    <TableCell className="text-white">0.55</TableCell>
-                    <TableCell className="text-white">9.39</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="text-white font-medium">Twenty One Capital</TableCell>
                     <TableCell className="text-white">CEP/XXI</TableCell>
                     <TableCell className="text-white">43,514</TableCell>
                     <TableCell className="text-white">~$3.6B</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
                     <TableCell className="text-white">N/A</TableCell>
                   </TableRow>
                   <TableRow>
@@ -221,69 +209,48 @@ const StrategySection = () => {
                     <TableCell className="text-white">30,021</TableCell>
                     <TableCell className="text-white">~$1.5B+</TableCell>
                     <TableCell className="text-white">N/A</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="text-white font-medium">Bullish</TableCell>
                     <TableCell className="text-white">BLSH</TableCell>
                     <TableCell className="text-white">24,000</TableCell>
                     <TableCell className="text-white">$7.16B</TableCell>
-                    <TableCell className="text-white">~$250M</TableCell>
                     <TableCell className="text-white">Negative</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
-                    <TableCell className="text-white">-20.7</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="text-white font-medium">Metaplanet</TableCell>
                     <TableCell className="text-white">3350.T</TableCell>
                     <TableCell className="text-white">20,136</TableCell>
                     <TableCell className="text-white">$4.06B</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
                     <TableCell className="text-white">Negative</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="text-white font-medium">Riot Platforms</TableCell>
                     <TableCell className="text-white">RIOT</TableCell>
                     <TableCell className="text-white">19,309</TableCell>
                     <TableCell className="text-white">~$3.0B</TableCell>
-                    <TableCell className="text-white">$541.72M</TableCell>
                     <TableCell className="text-white">-$94.84M</TableCell>
-                    <TableCell className="text-white">0.26</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="text-white font-medium">Trump Media & Technology</TableCell>
                     <TableCell className="text-white">DJT</TableCell>
                     <TableCell className="text-white">18,430</TableCell>
                     <TableCell className="text-white">$4.64B</TableCell>
-                    <TableCell className="text-white">$3.72M</TableCell>
                     <TableCell className="text-white">-$108.61M</TableCell>
-                    <TableCell className="text-white">0.42</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="text-white font-medium">Galaxy Digital Holdings</TableCell>
                     <TableCell className="text-white">GLXY</TableCell>
                     <TableCell className="text-white">17,102</TableCell>
                     <TableCell className="text-white">$4.5B</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
                     <TableCell className="text-white">$296M</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="text-white font-medium">CleanSpark</TableCell>
                     <TableCell className="text-white">CLSK</TableCell>
                     <TableCell className="text-white">12,827</TableCell>
                     <TableCell className="text-white">$2.78B</TableCell>
-                    <TableCell className="text-white">$537.40M</TableCell>
                     <TableCell className="text-white">-$195.56M</TableCell>
-                    <TableCell className="text-white">0.34</TableCell>
-                    <TableCell className="text-white">N/A</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
