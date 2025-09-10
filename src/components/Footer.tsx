@@ -86,7 +86,7 @@ const Footer = () => {
                 onClick={() => window.open('https://docsend.com/view/s/5n5jy75mfnpqawrx', '_blank')}
               >
                 <Download className="w-4 h-4 mr-2" />
-                Access Data Room
+                Request Data Room Access
               </Button>
             </div>
           </div>
