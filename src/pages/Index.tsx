@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import BitcoinAccumulationSection from "@/components/BitcoinAccumulationSection";
 import AboutSection from "@/components/AboutSection";
 import StrategySection from "@/components/StrategySection";
 import TeamSection from "@/components/TeamSection";
@@ -9,6 +10,7 @@ const Index = () => {
   return (
     <main className="font-inter">
       <Hero />
+      <BitcoinAccumulationSection />
 
       {/* Continuous gradient background from About to Footer */}
       <div className="gradient-bg-continuous">
