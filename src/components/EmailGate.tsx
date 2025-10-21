@@ -9,9 +9,10 @@ interface EmailGateProps {
   source: string; // For tracking which section the email came from
   title?: string;
   description?: string;
+  size?: 'default' | 'compact'; // Size variant for the email gate box
 }
 
-const EmailGate = ({ children, source, title = "Request Access", description = "Enter your email to view this content" }: EmailGateProps) => {
+const EmailGate = ({ children, source, title = "Request Access", description = "Enter your email to view this content", size = 'default' }: EmailGateProps) => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -70,20 +71,29 @@ const EmailGate = ({ children, source, title = "Request Access", description = "
 
   return (
     <div className="relative">
-      {/* Blurred Content */}
-      <div className="blur-sm pointer-events-none select-none">
+      {/* Blurred Content with softer edges */}
+      <div className="blur-sm pointer-events-none select-none transition-all duration-300" style={{
+        filter: 'blur(8px)',
+        WebkitFilter: 'blur(8px)',
+        maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 100%)'
+      }}>
         {children}
       </div>
       
       {/* Overlay with Email Form */}
-      <div className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-        <div className="bg-gray-900 border border-gray-700 rounded-2xl p-8 max-w-md w-full mx-4">
-          <div className="text-center mb-6">
-            <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Lock className="w-8 h-8 text-primary" />
+      <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+        <div className={`bg-gray-900 border border-gray-700 rounded-2xl mx-4 ${
+          size === 'compact' 
+            ? 'p-6 max-w-sm' 
+            : 'p-8 max-w-md'
+        } w-full`}>
+          <div className={`text-center ${size === 'compact' ? 'mb-4' : 'mb-6'}`}>
+            <div className={`${size === 'compact' ? 'w-12 h-12' : 'w-16 h-16'} bg-primary/10 rounded-xl flex items-center justify-center mx-auto ${size === 'compact' ? 'mb-3' : 'mb-4'}`}>
+              <Lock className={`${size === 'compact' ? 'w-6 h-6' : 'w-8 h-8'} text-primary`} />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-            <p className="text-white/70">{description}</p>
+            <h3 className={`${size === 'compact' ? 'text-xl' : 'text-2xl'} font-bold text-white ${size === 'compact' ? 'mb-1' : 'mb-2'}`}>{title}</h3>
+            <p className={`text-white/70 ${size === 'compact' ? 'text-sm' : ''}`}>{description}</p>
           </div>
           
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -114,7 +124,7 @@ const EmailGate = ({ children, source, title = "Request Access", description = "
             </Button>
           </form>
           
-          <p className="text-xs text-white/50 text-center mt-4">
+          <p className={`text-xs text-white/50 text-center ${size === 'compact' ? 'mt-3' : 'mt-4'}`}>
             By submitting your email, you agree to receive updates about Future Fund One.
           </p>
         </div>

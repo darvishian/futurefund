@@ -95,6 +95,7 @@ const StrategySection = () => {
           source="strategy_financial_metrics" 
           title="Request Access to Financial Metrics"
           description="Enter your email to view our target financial projections and key performance indicators."
+          size="compact"
         >
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
