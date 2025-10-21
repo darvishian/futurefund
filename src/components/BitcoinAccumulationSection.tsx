@@ -9,7 +9,7 @@ const BitcoinAccumulationSection = () => {
         </div>
         
         <div className="max-w-5xl mx-auto">
-          <div className="prose prose-lg mx-auto text-center">
+          <div className="prose prose-lg mx-auto text-left">
             <p className="text-lg text-white/80 leading-relaxed mb-8">
               In an era of accelerating digital transformation, Arch Public introduces the Bitcoin Accumulation Company (BAC) as a strategic framework for value preservation and amplification. A BAC operates by systematically converting revenue streams from tangible, high-performing assets, such as physical inventories, retail operations, real estate portfolios, or service-based enterprises, into Bitcoin, the premier digital store of value. This conversion process leverages Bitcoin's inherent attributes: portability across borders without intermediaries, robust security through cryptographic protocols, and immutability via its decentralized blockchain ledger. Unlike traditional asset management, a BAC does not merely hold Bitcoin as a speculative position; it actively accumulates it as a core output, transforming operational cash flows into a scarce, non-depreciating digital asset that appreciates independently of inflationary pressures or geographic constraints.
             </p>
