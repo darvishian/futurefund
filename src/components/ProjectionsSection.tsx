@@ -9,8 +9,8 @@ const ProjectionsSection = () => {
   const [investment, setInvestment] = useState(1000000);
   
   // Base projections for $1M investment
-  const baseDepreciation = 910774;
-  const baseReturn = 9054649;
+  const baseDepreciation = 807724;
+  const baseReturn = 8775169;
   
   // Calculate scaled projections
   const scaledDepreciation = (baseDepreciation * (investment / 1000000)).toLocaleString('en-US');
@@ -72,9 +72,9 @@ const ProjectionsSection = () => {
                 <div className="mt-6 p-6 bg-gray-800 rounded-xl">
                   <h4 className="font-semibold text-white mb-4">Investment Structure</h4>
                   <ul className="space-y-2 text-sm text-white/70">
-                    <li>• GPs manage day-to-day operations</li>
-                    <li>• LPs receive 8% preferred return first</li>
-                    <li>• Then 80/20 split favoring LPs</li>
+                    <li>• Common Shares: $250,000 to $999,999</li>
+                    <li>• Preferred Shares: $1,000,000+</li>
+                    <li>• Both classes: 80/20 LP/GP carry split</li>
                     <li>• Depreciation via K-1s offsets personal gains</li>
                   </ul>
                 </div>
@@ -103,11 +103,11 @@ const ProjectionsSection = () => {
                   <h4 className="font-semibold text-white mb-3">Key Metrics</h4>
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
-                      <div className="text-primary font-bold">10.04x</div>
+                      <div className="text-primary font-bold">{(baseReturn / 1000000).toFixed(2)}x</div>
                       <div className="text-white/70">Target MOIC</div>
                     </div>
                     <div>
-                      <div className="gradient-text font-bold">31.4%</div>
+                      <div className="gradient-text font-bold">24.2%</div>
                       <div className="text-white/70">IRR (Base Case)</div>
                     </div>
                   </div>
