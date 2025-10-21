@@ -10,10 +10,10 @@ const Index = () => {
   return (
     <main className="font-inter">
       <Hero />
-      <BitcoinAccumulationSection />
 
-      {/* Continuous gradient background from About to Footer */}
+      {/* Continuous gradient background from Bitcoin Accumulation to Footer */}
       <div className="gradient-bg-continuous">
+        <BitcoinAccumulationSection />
         <AboutSection />
         <StrategySection />
         <TeamSection />

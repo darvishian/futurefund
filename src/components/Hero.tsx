@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import manriver from "@/assets/manriver.jpeg";
 import archPublicLogo from "@/assets/ArchPublic_Logo_Stacked_1 Color - White.png";
+import ff1Logo from "@/assets/FF1v3transparent.png";
 import { useState } from "react";
 
 const Hero = () => {
@@ -60,10 +61,16 @@ const Hero = () => {
         <span className="text-accent font-medium text-sm">For Accredited Investors Only</span>
       </div>
       
-      <div className="absolute top-8 right-8 z-20">
+      <div className="absolute top-8 right-8 z-20 flex items-center space-x-4">
         <img
           src={archPublicLogo}
           alt="Arch Public Logo"
+          className="h-12 w-auto object-contain"
+        />
+        <div className="h-12 w-px bg-white/30"></div>
+        <img
+          src={ff1Logo}
+          alt="Future Fund One Logo"
           className="h-12 w-auto object-contain"
         />
       </div>
