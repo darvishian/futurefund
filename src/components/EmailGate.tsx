@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Mail, Lock, X } from "lucide-react";
+import { useEmailGate } from "@/contexts/EmailGateContext";
 
 interface EmailGateProps {
   children: React.ReactNode;
@@ -14,53 +15,19 @@ interface EmailGateProps {
 
 const EmailGate = ({ children, source, title = "Request Access", description = "Enter your email to view this content", size = 'default' }: EmailGateProps) => {
   const [email, setEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
+  const { isEmailSubmitted, submittedEmail, submitEmail } = useEmailGate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
     try {
-      console.log('Submitting email:', email);
-
-      // Submit to Google Sheets using the same system as Hero and Footer
-      const response = await fetch('https://script.google.com/macros/s/AKfycbw9Rl9goOJMOr965qXFSRLMcDi0ZwtHqjzA3FQCMmGRqFXVsPeYBfTTklZwLVDekDcBhw/exec', {
-        method: 'POST',
-        mode: 'no-cors', // Try with no-cors to avoid CORS issues
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email,
-          timestamp: new Date().toISOString(),
-          source: source
-        }),
-      });
-
-      console.log('Response received:', response);
-
-      // With no-cors, we can't read the response, so we'll assume success
-      console.log('Email submission completed (no-cors mode)');
-      setIsSubmitted(true);
+      await submitEmail(email, source);
       setEmail('');
-
     } catch (error) {
       console.error('Error submitting email:', error);
-
-      // Fallback: Store in localStorage for now
-      const submissions = JSON.parse(localStorage.getItem('email_gate_submissions') || '[]');
-      submissions.push({
-        email: email,
-        timestamp: new Date().toISOString(),
-        source: source
-      });
-      localStorage.setItem('email_gate_submissions', JSON.stringify(submissions));
-
-      console.log('Email stored locally due to connection issue');
-      setIsSubmitted(true);
-      setEmail('');
     } finally {
       setIsLoading(false);
     }
@@ -74,7 +41,7 @@ const EmailGate = ({ children, source, title = "Request Access", description = "
     setIsMinimized(false);
   };
 
-  if (isSubmitted) {
+  if (isEmailSubmitted) {
     return <>{children}</>;
   }
 
