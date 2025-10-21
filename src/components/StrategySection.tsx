@@ -99,11 +99,11 @@ const StrategySection = () => {
         >
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold gradient-text mb-2">10.04x</div>
+              <div className="text-3xl font-bold gradient-text mb-2">8.78x</div>
               <div className="text-sm text-white/60">Target MOIC</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold gradient-text mb-2">31.4%</div>
+              <div className="text-3xl font-bold gradient-text mb-2">24.2%</div>
               <div className="text-sm text-white/60">IRR (Base Case)</div>
             </div>
             <div className="text-center">
