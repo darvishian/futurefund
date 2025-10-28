@@ -9,8 +9,8 @@ const ProjectionsSection = () => {
   const [investment, setInvestment] = useState(1000000);
   
   // Base projections for $1M investment
-  const baseDepreciation = 807724;
-  const baseReturn = 8775169;
+  const baseDepreciation = 810333;
+  const baseReturn = 7248506;
   
   // Calculate scaled projections
   const scaledDepreciation = (baseDepreciation * (investment / 1000000)).toLocaleString('en-US');
@@ -103,11 +103,11 @@ const ProjectionsSection = () => {
                   <h4 className="font-semibold text-white mb-3">Key Metrics</h4>
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
-                      <div className="text-primary font-bold">{(baseReturn / 1000000).toFixed(2)}x</div>
+                      <div className="text-primary font-bold">8.35x</div>
                       <div className="text-white/70">Target MOIC</div>
                     </div>
                     <div>
-                      <div className="gradient-text font-bold">24.2%</div>
+                      <div className="gradient-text font-bold">28.63%</div>
                       <div className="text-white/70">IRR (Base Case)</div>
                     </div>
                   </div>
