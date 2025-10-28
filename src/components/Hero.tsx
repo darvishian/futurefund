@@ -5,11 +5,11 @@ import ff1Logo from "@/assets/FF1v3transparent.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black px-4 sm:px-6 pt-16 sm:pt-0">
+    <section className="relative min-h-screen flex flex-col sm:flex-row items-center justify-center overflow-hidden bg-black px-4 sm:px-6 pt-2 sm:pt-0">
       
       {/* Mobile: stacked badge + logos above hero (in flow) */}
       <div className="sm:hidden w-full z-20">
-        <div className="mx-auto flex flex-col items-center justify-center gap-2 px-4 pt-4">
+        <div className="mx-auto flex flex-col items-center justify-center gap-2 px-4 pt-4 mb-3">
           <div className="bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-3 py-1.5">
             <span className="text-accent font-medium text-xs">For Accredited Investors Only</span>
           </div>
