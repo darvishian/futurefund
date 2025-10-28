@@ -5,24 +5,30 @@ import ff1Logo from "@/assets/FF1v3transparent.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
       
       {/* Top Navigation Elements */}
-      <div className="absolute top-8 left-8 z-20 bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-4 py-2">
-        <span className="text-accent font-medium text-sm">For Accredited Investors Only</span>
+      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20 bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-3 py-1.5 sm:px-4 sm:py-2">
+        <span className="text-accent font-medium text-xs sm:text-sm">For Accredited Investors Only</span>
       </div>
       
-      <div className="absolute top-8 right-8 z-20 flex items-center space-x-4">
+      <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-20 flex flex-wrap items-center gap-2 sm:gap-4">
         <img
           src={archPublicLogo}
           alt="Arch Public Logo"
-          className="h-12 w-auto object-contain"
+          className="h-8 sm:h-12 w-auto object-contain"
+          loading="eager"
+          width={120}
+          height={48}
         />
-        <div className="h-12 w-px bg-white/30"></div>
+        <div className="h-8 sm:h-12 w-px bg-white/30"></div>
         <img
           src={ff1Logo}
           alt="Future Fund One Logo"
-          className="h-12 w-auto object-contain"
+          className="h-8 sm:h-12 w-auto object-contain"
+          loading="eager"
+          width={120}
+          height={48}
         />
       </div>
       
@@ -35,31 +41,34 @@ const Hero = () => {
             <img
               src={manriver}
               alt="Man by river"
-              className="w-40 h-28 md:w-56 md:h-36 object-contain rounded-lg shadow-2xl opacity-90"
+              className="w-32 h-20 sm:w-40 sm:h-28 md:w-56 md:h-36 object-contain rounded-lg shadow-2xl opacity-90"
+              loading="eager"
+              width={224}
+              height={144}
             />
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 hero-text-glow animate-glow-pulse">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-4 sm:mb-6 hero-text-glow animate-glow-pulse">
             Future Fund One
           </h1>
           
-          <h2 className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto font-light">
+          <h2 className="text-base sm:text-lg md:text-2xl text-white/90 mb-6 sm:mb-8 max-w-3xl sm:max-w-4xl mx-auto font-light">
             A Tax-Advantaged Bitcoin Supercharger – Capturing Bitcoin's Potential with 
             Stable Real Estate Income and Algorithmic Precision
           </h2>
           
-          <p className="text-lg text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-white/80 mb-8 sm:mb-12 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
             Built on three pillars: <span className="gradient-text font-medium">Bitcoin Investment</span> enhanced by proprietary algorithms,
             <span className="gradient-text font-medium"> Real Estate Cash Flow</span> fueling accumulation, and
             <span className="gradient-text font-medium"> Tax Efficiency</span> via depreciation benefits.
           </p>
           
           {/* Waitlist Button */}
-          <div className="max-w-sm mx-auto space-y-3">
+          <div className="max-w-sm mx-auto space-y-2 sm:space-y-3">
             <Button
               asChild
               size="sm"
-              className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-500 disabled:cursor-not-allowed text-white px-6 py-2 text-sm cosmic-glow transition-all duration-300 hover:scale-105"
+              className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-500 disabled:cursor-not-allowed text-white px-4 sm:px-6 py-2 text-sm cosmic-glow transition-all duration-300 hover:scale-105"
             >
               <a
                 href="https://investors.appfolioim.com/bandminvest/investor/submit_interest/4"
@@ -73,12 +82,12 @@ const Hero = () => {
           </div>
 
           {/* Schedule Call Button */}
-          <div className="max-w-sm mx-auto mt-4">
+          <div className="max-w-sm mx-auto mt-3 sm:mt-4">
             <Button
               asChild
               size="sm"
               variant="outline"
-              className="w-full bg-white/10 border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+              className="w-full bg-white/10 border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 backdrop-blur-sm min-h-[44px]"
             >
               <a
                 href="https://calendar.app.google/7j3AVzoz5WGptCVE7?_kx=4Yo6TKgOFJ35T6kHnb87Sw.RjX6qj"
@@ -94,8 +103,8 @@ const Hero = () => {
       </div>
       
       {/* Floating Animation Elements */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-float">
-        <div className="w-6 h-6 border-2 border-white/50 rounded-full animate-pulse"></div>
+      <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 animate-float">
+        <div className="w-4 h-4 sm:w-6 sm:h-6 border-2 border-white/50 rounded-full animate-pulse"></div>
       </div>
     </section>
   );

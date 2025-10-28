@@ -3,13 +3,13 @@ import { Download } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="text-white py-20">
+    <footer className="text-white py-12 sm:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Contact & Links */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-10 sm:mb-12">
           {/* Join Investor List */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Join Our Investor List</h3>
+            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Join Our Investor List</h3>
             <Button
               asChild
               className="w-full bg-accent hover:bg-accent/90 text-cosmic-dark"
@@ -27,8 +27,8 @@ const Footer = () => {
           
           {/* Resources */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Resources</h3>
-            <div className="space-y-3">
+            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Resources</h3>
+            <div className="space-y-2 sm:space-y-3">
               <Button
                 asChild
                 variant="ghost"
@@ -51,7 +51,7 @@ const Footer = () => {
         
         {/* Disclaimer */}
         <div className="border-t border-white/20 pt-8">
-          <div className="text-sm text-white/60 space-y-4">
+          <div className="text-xs sm:text-sm text-white/60 space-y-3 sm:space-y-4">
             <p className="font-semibold text-white">Important Disclaimer:</p>
             <p>
               This presentation is for informational purposes only and does not constitute an offer to sell or a solicitation 
@@ -70,11 +70,11 @@ const Footer = () => {
             </p>
           </div>
           
-          <div className="mt-8 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white/60 text-sm">
+          <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-2">
+            <p className="text-white/60 text-xs sm:text-sm">
               © 2025 ArchPublic.com. All rights reserved.
             </p>
-            <p className="text-white/60 text-sm mt-4 md:mt-0">
+            <p className="text-white/60 text-xs sm:text-sm mt-2 md:mt-0">
               For Accredited Investors Only
             </p>
           </div>

@@ -12,7 +12,7 @@ const Index = () => {
       <Hero />
 
       {/* Continuous gradient background from Bitcoin Accumulation to Footer */}
-      <div className="gradient-bg-continuous">
+      <div className="gradient-bg-continuous px-4 sm:px-6">
         <BitcoinAccumulationSection />
         <AboutSection />
         <StrategySection />

@@ -74,8 +74,8 @@ const EmailGate = ({ children, source, title = "Request Access", description = "
         <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm">
           <div className={`bg-gray-900 border border-gray-700 rounded-2xl mx-4 relative ${
             size === 'compact' 
-              ? 'p-6 max-w-sm' 
-              : 'p-8 max-w-md'
+              ? 'p-5 sm:p-6 max-w-sm' 
+              : 'p-6 sm:p-8 max-w-md'
           } w-full`}>
             {/* X Button */}
             <button
@@ -86,27 +86,27 @@ const EmailGate = ({ children, source, title = "Request Access", description = "
               <X className="w-5 h-5" />
             </button>
             
-            <div className={`text-center ${size === 'compact' ? 'mb-4' : 'mb-6'}`}>
-              <div className={`${size === 'compact' ? 'w-12 h-12' : 'w-16 h-16'} bg-primary/10 rounded-xl flex items-center justify-center mx-auto ${size === 'compact' ? 'mb-3' : 'mb-4'}`}>
-                <Lock className={`${size === 'compact' ? 'w-6 h-6' : 'w-8 h-8'} text-primary`} />
+            <div className={`text-center ${size === 'compact' ? 'mb-3 sm:mb-4' : 'mb-4 sm:mb-6'}`}>
+              <div className={`${size === 'compact' ? 'w-10 h-10 sm:w-12 sm:h-12' : 'w-12 h-12 sm:w-16 sm:h-16'} bg-primary/10 rounded-xl flex items-center justify-center mx-auto ${size === 'compact' ? 'mb-2 sm:mb-3' : 'mb-3 sm:mb-4'}`}>
+                <Lock className={`${size === 'compact' ? 'w-5 h-5 sm:w-6 sm:h-6' : 'w-6 h-6 sm:w-8 sm:h-8'} text-primary`} />
               </div>
-              <h3 className={`${size === 'compact' ? 'text-xl' : 'text-2xl'} font-bold text-white ${size === 'compact' ? 'mb-1' : 'mb-2'}`}>{title}</h3>
+              <h3 className={`${size === 'compact' ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl'} font-bold text-white ${size === 'compact' ? 'mb-1' : 'mb-2'}`}>{title}</h3>
               <p className={`text-white/70 ${size === 'compact' ? 'text-sm' : ''}`}>{description}</p>
             </div>
             
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div>
                 <Label htmlFor="email" className="text-white mb-2 block">
                   Email Address
                 </Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/60" />
+                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
                   <Input
                     id="email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="pl-10 bg-gray-800 border-gray-600 text-white"
+                    className="pl-10 bg-gray-800 border-gray-600 text-white h-11 sm:h-12"
                     placeholder="your@email.com"
                     required
                   />
@@ -115,14 +115,14 @@ const EmailGate = ({ children, source, title = "Request Access", description = "
               
               <Button 
                 type="submit" 
-                className="w-full bg-primary hover:bg-primary/90 text-white"
+                className="w-full bg-primary hover:bg-primary/90 text-white min-h-[44px]"
                 disabled={isLoading || !email}
               >
                 {isLoading ? 'Submitting...' : 'Request Access'}
               </Button>
             </form>
             
-            <p className={`text-xs text-white/50 text-center ${size === 'compact' ? 'mt-3' : 'mt-4'}`}>
+            <p className={`text-xs text-white/50 text-center ${size === 'compact' ? 'mt-2 sm:mt-3' : 'mt-3 sm:mt-4'}`}>
               By submitting your email, you agree to receive updates about Future Fund One.
             </p>
           </div>
