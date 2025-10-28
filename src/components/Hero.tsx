@@ -7,29 +7,32 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
       
-      {/* Top Navigation Elements */}
-      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20 bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-3 py-1.5 sm:px-4 sm:py-2">
-        <span className="text-accent font-medium text-xs sm:text-sm">For Accredited Investors Only</span>
-      </div>
-      
-      <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-20 flex flex-wrap items-center gap-2 sm:gap-4">
-        <img
-          src={archPublicLogo}
-          alt="Arch Public Logo"
-          className="h-8 sm:h-12 w-auto object-contain"
-          loading="eager"
-          width={120}
-          height={48}
-        />
-        <div className="h-8 sm:h-12 w-px bg-white/30"></div>
-        <img
-          src={ff1Logo}
-          alt="Future Fund One Logo"
-          className="h-8 sm:h-12 w-auto object-contain"
-          loading="eager"
-          width={120}
-          height={48}
-        />
+      {/* Top Elements: badge + logos (stack on mobile, inline on larger) */}
+      <div className="absolute top-3 sm:top-6 left-0 right-0 z-20">
+        <div className="mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 px-4">
+          <div className="bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-3 py-1.5 sm:px-4 sm:py-2">
+            <span className="text-accent font-medium text-xs sm:text-sm">For Accredited Investors Only</span>
+          </div>
+          <div className="flex items-center justify-center gap-2 sm:gap-4">
+            <img
+              src={archPublicLogo}
+              alt="Arch Public Logo"
+              className="h-7 sm:h-10 md:h-12 w-auto object-contain"
+              loading="eager"
+              width={120}
+              height={48}
+            />
+            <div className="h-6 sm:h-8 md:h-12 w-px bg-white/30"></div>
+            <img
+              src={ff1Logo}
+              alt="Future Fund One Logo"
+              className="h-7 sm:h-10 md:h-12 w-auto object-contain"
+              loading="eager"
+              width={120}
+              height={48}
+            />
+          </div>
+        </div>
       </div>
       
       {/* Content */}
