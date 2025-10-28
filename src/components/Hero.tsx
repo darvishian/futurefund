@@ -10,27 +10,27 @@ const Hero = () => {
       {/* Mobile: stacked badge + logos above hero (in flow) */}
       <div className="sm:hidden w-full z-20">
         <div className="mx-auto flex flex-col items-center justify-center gap-2 px-4 pt-4 mb-3">
-          <div className="bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-3 py-1.5">
-            <span className="text-accent font-medium text-xs">For Accredited Investors Only</span>
-          </div>
           <div className="flex items-center justify-center gap-2">
             <img
               src={archPublicLogo}
               alt="Arch Public Logo"
-              className="h-7 w-auto object-contain"
+              className="h-9 w-auto object-contain"
               loading="eager"
-              width={120}
-              height={48}
+              width={140}
+              height={56}
             />
             <div className="h-6 w-px bg-white/30"></div>
             <img
               src={ff1Logo}
               alt="Future Fund One Logo"
-              className="h-7 w-auto object-contain"
+              className="h-9 w-auto object-contain"
               loading="eager"
-              width={120}
-              height={48}
+              width={140}
+              height={56}
             />
+          </div>
+          <div className="bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-3 py-1.5">
+            <span className="text-accent font-medium text-xs">For Accredited Investors Only</span>
           </div>
         </div>
       </div>
