@@ -1,58 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import manriver from "@/assets/manriver.jpeg";
 import archPublicLogo from "@/assets/ArchPublic_Logo_Stacked_1 Color - White.png";
 import ff1Logo from "@/assets/FF1v3transparent.png";
-import { useState } from "react";
 
 const Hero = () => {
-  const [email, setEmail] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
-      console.log('Submitting email:', email);
-
-      // Submit to Google Sheets (you'll need to set up a Google Apps Script)
-      const response = await fetch('https://script.google.com/macros/s/AKfycbw9Rl9goOJMOr965qXFSRLMcDi0ZwtHqjzA3FQCMmGRqFXVsPeYBfTTklZwLVDekDcBhw/exec', {
-        method: 'POST',
-        mode: 'no-cors', // Try with no-cors to avoid CORS issues
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email,
-          timestamp: new Date().toISOString(),
-          source: 'hero_waitlist'
-        }),
-      });
-
-      console.log('Response received:', response);
-
-      // With no-cors, we can't read the response, so we'll assume success
-      console.log('Form submission completed (no-cors mode)');
-      alert('Thank you for joining the waitlist! We\'ll be in touch soon.');
-      setEmail('');
-
-    } catch (error) {
-      console.error('Error submitting form:', error);
-
-      // Fallback: Store in localStorage for now
-      const submissions = JSON.parse(localStorage.getItem('waitlist_submissions') || '[]');
-      submissions.push({
-        email: email,
-        timestamp: new Date().toISOString(),
-        source: 'hero_waitlist'
-      });
-      localStorage.setItem('waitlist_submissions', JSON.stringify(submissions));
-
-      alert('Thank you for joining the waitlist! We\'ll be in touch soon. (Stored locally due to connection issue)');
-      setEmail('');
-    }
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       
@@ -103,26 +54,23 @@ const Hero = () => {
             <span className="gradient-text font-medium"> Tax Efficiency</span> via depreciation benefits.
           </p>
           
-          {/* Waitlist Form */}
-          <form onSubmit={handleSubmit} className="max-w-sm mx-auto space-y-3">
-            <Input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email address"
-              required
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-primary focus:ring-primary h-10"
-            />
-
+          {/* Waitlist Button */}
+          <div className="max-w-sm mx-auto space-y-3">
             <Button
-              type="submit"
+              asChild
               size="sm"
-              disabled={!email}
               className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-500 disabled:cursor-not-allowed text-white px-6 py-2 text-sm cosmic-glow transition-all duration-300 hover:scale-105"
             >
-              Join Waitlist
+              <a
+                href="https://investors.appfolioim.com/bandminvest/investor/submit_interest/4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full"
+              >
+                Join the Waitlist
+              </a>
             </Button>
-          </form>
+          </div>
 
           {/* Schedule Call Button */}
           <div className="max-w-sm mx-auto mt-4">

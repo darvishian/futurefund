@@ -1,79 +1,28 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useState } from "react";
-import { Mail, Download, Linkedin, Twitter } from "lucide-react";
+import { Download } from "lucide-react";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-  
-  const handleEmailSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
-      console.log('Submitting email:', email);
-
-      // Submit to Google Sheets (you'll need to set up a Google Apps Script)
-      const response = await fetch('https://script.google.com/macros/s/AKfycbw9Rl9goOJMOr965qXFSRLMcDi0ZwtHqjzA3FQCMmGRqFXVsPeYBfTTklZwLVDekDcBhw/exec', {
-        method: 'POST',
-        mode: 'no-cors', // Try with no-cors to avoid CORS issues
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email,
-          timestamp: new Date().toISOString(),
-          source: 'footer_newsletter'
-        }),
-      });
-
-      console.log('Response received:', response);
-
-      // With no-cors, we can't read the response, so we'll assume success
-      console.log('Email submission completed (no-cors mode)');
-      alert('Thank you for subscribing! We\'ll keep you updated.');
-      setEmail("");
-
-    } catch (error) {
-      console.error('Error submitting email:', error);
-
-      // Fallback: Store in localStorage for now
-      const submissions = JSON.parse(localStorage.getItem('newsletter_submissions') || '[]');
-      submissions.push({
-        email: email,
-        timestamp: new Date().toISOString(),
-        source: 'footer_newsletter'
-      });
-      localStorage.setItem('newsletter_submissions', JSON.stringify(submissions));
-
-      alert('Thank you for subscribing! We\'ll keep you updated. (Stored locally due to connection issue)');
-      setEmail("");
-    }
-  };
-
   return (
     <footer className="text-white py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Contact & Links */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {/* Email Signup */}
+          {/* Join Investor List */}
           <div>
             <h3 className="text-xl font-bold mb-4">Join Our Investor List</h3>
-            <form onSubmit={handleEmailSubmit} className="space-y-3">
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/60" />
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                  required
-                />
-              </div>
-              <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-cosmic-dark">
-                Subscribe
-              </Button>
-            </form>
+            <Button
+              asChild
+              className="w-full bg-accent hover:bg-accent/90 text-cosmic-dark"
+            >
+              <a
+                href="https://investors.appfolioim.com/bandminvest/investor/submit_interest/4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full"
+              >
+                Join the Investor List
+              </a>
+            </Button>
           </div>
           
           {/* Resources */}
@@ -81,12 +30,19 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Resources</h3>
             <div className="space-y-3">
               <Button
+                asChild
                 variant="ghost"
                 className="w-full justify-start text-white hover:text-accent hover:bg-white/10"
-                onClick={() => window.open('https://docsend.com/view/s/5n5jy75mfnpqawrx', '_blank')}
               >
-                <Download className="w-4 h-4 mr-2" />
-                Request Data Room Access
+                <a
+                  href="https://investors.appfolioim.com/bandminvest/investor/submit_interest/4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center w-full"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Request Data Room Access
+                </a>
               </Button>
             </div>
           </div>
