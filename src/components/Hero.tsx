@@ -105,7 +105,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="block w-full"
               >
-                Join the Waitlist
+                Submit Interest
               </a>
             </Button>
           </div>
